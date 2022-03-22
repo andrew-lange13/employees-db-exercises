@@ -21,3 +21,13 @@ WHERE first_name = 'Irena'
     OR first_name = 'Vidya'
     OR first_name = 'Maya'
 GROUP BY gender;
+
+# TODO: top three most common job titles
+
+SELECT titles.title, COUNT(titles.title)
+FROM titles
+GROUP BY title
+ORDER BY COUNT(title) DESC
+LIMIT 3;
+
+
