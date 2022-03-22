@@ -38,3 +38,7 @@ WHERE title = 'Senior Engineer'
 GROUP BY emp_no, title, from_date
 ORDER BY from_date
 
+SELECT birth_date, COUNT(birth_date)
+FROM employees
+GROUP BY birth_date
+ORDER BY COUNT(birth_date) DESC
