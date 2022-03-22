@@ -30,4 +30,11 @@ GROUP BY title
 ORDER BY COUNT(title) DESC
 LIMIT 3;
 
+# TODO: what is the lowest employee number for the first senior engineers in the company?
+
+SELECT DISTINCT emp_no, title, COUNT(title), from_date
+FROM titles
+WHERE title = 'Senior Engineer'
+GROUP BY emp_no, title, from_date
+ORDER BY from_date
 
