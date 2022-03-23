@@ -48,5 +48,12 @@ ORDER BY COUNT(birth_date) DESC;
 
 SELECT gender, COUNT(gender)
 FROM employees
-GROUP BY gender
+GROUP BY gender;
 
+# TODO: Find the average salary by employee title, round to 2 decimal places and order by descending order.
+
+SELECT title, CAST(AVG(salary) AS DECIMAL (16,2))
+FROM titles
+JOIN salaries on titles.emp_no = salaries.emp_no
+GROUP BY titles.title
+ORDER BY AVG(salary) DESC;
