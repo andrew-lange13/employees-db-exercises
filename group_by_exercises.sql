@@ -36,9 +36,17 @@ SELECT DISTINCT emp_no, title, COUNT(title), from_date
 FROM titles
 WHERE title = 'Senior Engineer'
 GROUP BY emp_no, title, from_date
-ORDER BY from_date
+ORDER BY from_date;
 
 SELECT birth_date, COUNT(birth_date)
 FROM employees
 GROUP BY birth_date
-ORDER BY COUNT(birth_date) DESC
+ORDER BY COUNT(birth_date) DESC;
+
+
+# TODO: Find the number of Male (M) and Female (F) employees in the database and order the counts in descending order.
+
+SELECT gender, COUNT(gender)
+FROM employees
+GROUP BY gender
+
