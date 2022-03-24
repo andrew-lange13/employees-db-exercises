@@ -49,3 +49,14 @@ WHERE employees.emp_no IN (
         FROM salaries
     )
 );
+
+# TODO: get current manager name of Sales department (use sub-queries)
+
+SELECT CONCAT(first_name, ' ', last_name)
+FROM employees
+WHERE employees.emp_no IN(
+    SELECT dept_manager.emp_no
+    FROM dept_manager
+    WHERE dept_no = 'd007'
+    AND to_date = '9999-01-01'
+    );
